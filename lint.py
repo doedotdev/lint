@@ -22,11 +22,9 @@ args = parser.parse_args()
 path = str(args.path)
 threshold = float(args.threshold)
 
-message = ('PyLint Starting | '
-           'Path: {} | '
-           'Threshold: {} '.format(path, threshold))
-
-logging.info(message)
+logging.info('PyLint Starting | '
+             'Path: {} | '
+             'Threshold: {} '.format(path, threshold))
 
 results = Run([path], do_exit=False)
 
@@ -42,10 +40,8 @@ if final_score < threshold:
     raise Exception(message)
 
 else:
-    message = ('PyLint Passed | '
-               'Score: {} | '
-               'Threshold: {} '.format(final_score, threshold))
-
-    logging.info(message)
+    logging.info('PyLint Passed | '
+                 'Score: {} | '
+                 'Threshold: {} '.format(final_score, threshold))
 
     exit(0)
